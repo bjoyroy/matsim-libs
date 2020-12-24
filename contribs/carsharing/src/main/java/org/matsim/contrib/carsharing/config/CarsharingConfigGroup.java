@@ -11,10 +11,21 @@ public class CarsharingConfigGroup extends ReflectiveConfigGroup {
 	private Integer statsWriterFrequency = null;
 	private String vehiclelocationsInputFile = null;
 	private String membershipInputFile = null;
+	private String vehicleTypeInputFile = null;
 
 	
 	public CarsharingConfigGroup() {
 		super(GROUP_NAME);
+	}
+	
+	@StringGetter("vechileTypeFile")
+	public String getVehicleTypeInputFile() {
+		return vehicleTypeInputFile;
+	}
+
+	@StringSetter("vechileTypeFile")
+	public void setVehicleTypeInputFile(final String vehicleTypeInputFile) {
+		this.vehicleTypeInputFile = vehicleTypeInputFile;
 	}
 	
 	@StringGetter( "statsWriterFrequency" )

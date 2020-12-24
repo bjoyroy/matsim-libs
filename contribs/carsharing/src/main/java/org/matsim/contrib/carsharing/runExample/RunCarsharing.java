@@ -10,6 +10,8 @@ import org.matsim.api.core.v01.network.Network;
 import org.matsim.contrib.carsharing.config.CarsharingConfigGroup;
 import org.matsim.contrib.carsharing.control.listeners.CarsharingListener;
 import org.matsim.contrib.carsharing.events.handlers.PersonArrivalDepartureHandler;
+import org.matsim.contrib.carsharing.helper.VehicleTypeContainer;
+import org.matsim.contrib.carsharing.helper.VehicleTypeReader;
 import org.matsim.contrib.carsharing.manager.CarsharingManagerInterface;
 import org.matsim.contrib.carsharing.manager.CarsharingManagerNew;
 import org.matsim.contrib.carsharing.manager.demand.CurrentTotalDemand;
@@ -104,7 +106,13 @@ public class RunCarsharing {
 		membershipReader.readFile(configGroup.getmembership());
 
 		final MembershipContainer memberships = membershipReader.getMembershipContainer();
-
+		
+		// added by bjoy
+		VehicleTypeReader vehicleTypeReader = new VehicleTypeReader();
+		vehicleTypeReader.readFile(configGroup.getVehicleTypeInputFile()); //
+		final VehicleTypeContainer vehicleTypes = vehicleTypeReader.getVehicleTypeContainer(); //
+		//
+		
 		final CostsCalculatorContainer costsCalculatorContainer = CarsharingUtils
 				.createCompanyCostsStructure(carsharingCompanies);
 
@@ -139,6 +147,11 @@ public class RunCarsharing {
 				bind(CostsCalculatorContainer.class).toInstance(costsCalculatorContainer);
 				bind(MembershipContainer.class).toInstance(memberships);
 				bind(CarsharingSupplyInterface.class).to(CarsharingSupplyContainer.class);
+				
+				// added by bjoy
+				bind(VehicleTypeContainer.class).toInstance(vehicleTypes);
+				//
+				
 				bind(CarsharingManagerInterface.class).to(CarsharingManagerNew.class);
 				bind(VehicleChoiceAgent.class).toInstance(vehicleChoiceAgent);
 				bind(DemandHandler.class).asEagerSingleton();

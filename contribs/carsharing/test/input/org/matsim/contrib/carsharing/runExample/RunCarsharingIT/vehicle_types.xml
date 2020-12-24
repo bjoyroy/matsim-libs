@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vehicleTypes SYSTEM "src/main/resources/dtd/vehicle_types.dtd">
+<vehicleTypes>
+	<vehicleType name="scooter">
+			<maxVelocity>9.0</maxVelocity>
+			<pcuEquivalent>0.20</pcuEquivalent>
+			<length>1.15824</length>
+			<width>0.3048</width>
+			<capacity>2</capacity>
+	</vehicleType>
+	
+	
+	<vehicleType name="taxii">
+			<maxVelocity>8.0</maxVelocity>
+			<pcuEquivalent>0.20</pcuEquivalent>
+			<length>1.15824</length>
+			<width>0.3048</width>
+			<capacity>2</capacity>
+	</vehicleType>
+	
+	<!--
+	<vehicleType name="twoway">
+			<maxVelocity>9.0</maxVelocity>
+			<pcuEquivalent>0.20</pcuEquivalent>
+			<length>1.15824</length>
+			<width>0.3048</width>
+			<capacity>2</capacity>
+	</vehicleType>
+	-->
+</vehicleTypes>

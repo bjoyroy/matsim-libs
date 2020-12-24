@@ -2,6 +2,8 @@ package org.matsim.contrib.carsharing.qsim;
 
 import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.network.Link;
+import org.matsim.contrib.carsharing.helper.CustomVehicleType;
+import org.matsim.contrib.carsharing.helper.VehicleTypeContainer;
 import org.matsim.contrib.carsharing.manager.supply.CarsharingSupplyInterface;
 import org.matsim.contrib.carsharing.vehicles.CSVehicle;
 import org.matsim.core.mobsim.framework.AgentSource;
@@ -27,7 +29,8 @@ public class ParkCSVehicles implements AgentSource {
 	//private final static Logger log = Logger.getLogger(ParkCSVehicles.class);
 	
 	public ParkCSVehicles(QSim qSim,
-			CarsharingSupplyInterface carsharingSupply) {
+			CarsharingSupplyInterface carsharingSupply,
+			VehicleTypeContainer vehicleTypeContainer) {
 		
 		this.qsim = qSim;  
 		this.modeVehicleTypes = new HashMap<>();
@@ -37,10 +40,54 @@ public class ParkCSVehicles implements AgentSource {
 			modeVehicleTypes.put(mode, VehicleUtils.getDefaultVehicleType());
 		}
 		this.carsharingSupply =  carsharingSupply;
+		
+		Map<String, CustomVehicleType> customVehicleMap = vehicleTypeContainer.getVehicleTypeMap(); // 
+		
+		for(Map.Entry<String, CustomVehicleType> entry : customVehicleMap.entrySet()) {
+			String customMode = entry.getKey();
+			CustomVehicleType cvt = entry.getValue();
+			
+			
+			
+			
+			VehicleType vt = VehicleUtils.getFactory().createVehicleType(Id.create(customMode, VehicleType.class)); // vehicle mode form xml
+			//VehicleType vt = VehicleUtils.getFactory().createVehicleType(Id.create(TransportMode.bike, VehicleType.class));
+			
+			// xml file
+			vt.setMaximumVelocity(cvt.getMaxVelocity());
+			vt.setPcuEquivalents(cvt.getPcuEvuivalents());
+			vt.setLength(cvt.getLength());
+			vt.setWidth(cvt.getWidth());
+			vt.getCapacity().setSeats(cvt.getCapacity());
+			
+			modeVehicleTypes.put("twoway", vt);
+			modeVehicleTypes.put("freefloating", vt);
+			modeVehicleTypes.put("oneway", vt);
+		}
+		
+		/*
 		modeVehicleTypes.put("twoway", VehicleUtils.getDefaultVehicleType());
 		modeVehicleTypes.put("freefloating", VehicleUtils.getDefaultVehicleType());
 
 		modeVehicleTypes.put("oneway", VehicleUtils.getDefaultVehicleType());
+		*/
+		
+		
+		// Jalal: add new vehicle type
+		/*
+		VehicleType escooter = VehicleUtils.getFactory().createVehicleType(Id.create("bike", VehicleType.class));
+		// values below are from Prof.Virginia
+		escooter.setMaximumVelocity(5); // 18.6 mph //8.314944
+		escooter.setPcuEquivalents(0.20);
+		escooter.setLength(1.15824); // 3.8 ft
+		escooter.setWidth(0.3048); // 1 ft
+		// set capacity to 1
+		escooter.getCapacity().setSeats(1);
+//		bicycle.setNetworkMode("bicycle");
+		modeVehicleTypes.put("twoway", escooter);
+		modeVehicleTypes.put("freefloating", escooter);
+		modeVehicleTypes.put("oneway", escooter);
+		*/
 		
 		
 	}

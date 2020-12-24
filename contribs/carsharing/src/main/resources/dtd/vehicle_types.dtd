@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- $Id$ -->
+
+<!-- ============================================================ -->
+<!ELEMENT vehicleTypes          (vehicleType*)>
+<!ATTLIST vehicleTypes
+          reference_layer  CDATA #IMPLIED
+          xml:lang       NMTOKEN "de-CH">
+
+
+<!ELEMENT vehicleType       (maxVelocity, pcuEquivalent, length, width, capacity)>
+
+<!ATTLIST vehicleType
+          name         CDATA   #REQUIRED>
+          
+<!ELEMENT maxVelocity (#PCDATA)>
+<!ELEMENT pcuEquivalent (#PCDATA)>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>

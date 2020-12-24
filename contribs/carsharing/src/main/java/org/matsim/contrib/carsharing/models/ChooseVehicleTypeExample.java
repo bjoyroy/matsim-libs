@@ -15,8 +15,18 @@ public class ChooseVehicleTypeExample implements ChooseVehicleType {
 	@Override
 	public String getPreferredVehicleType(Plan plan, Leg currentLeg){
 		
-		String vehicleType = "car";
-		return vehicleType;
+		//String vehicleType = "car";
+		//return vehicleType;
+		
+		String[] vehicleTypes = {"scooter", "taxii"};
+		
+		double random = Math.random();
+		
+		if(random > 0.5) {
+			return vehicleTypes[1];
+		}
+		
+		return vehicleTypes[0];
 	}
 
 }

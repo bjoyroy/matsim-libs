@@ -3,20 +3,22 @@
 <companies>
 	<company name="Mobility">
 		<twoway id="1" x="-375" y="0" >
-			<vehicle type="car" vehicleID="TW_1" />
-			<vehicle type="car" vehicleID="TW_2" />
+		<!-- car to taxii -->
+			<vehicle type="taxii" vehicleID="TW_1" />
+			<vehicle type="taxii" vehicleID="TW_2" />
 		</twoway>
 		<twoway id="2" x="0" y="375" >
-			<vehicle type="car" vehicleID="TW_3" />
-			<vehicle type="car" vehicleID="TW_4" />
+			<vehicle type="taxii" vehicleID="TW_3" />
+			<vehicle type="taxii" vehicleID="TW_4" />
 		</twoway>
 		<oneway id="1" x="-375" y="0" freeparking="2">
-			<vehicle type="car" vehicleID="OW_1" />
-			<vehicle type="car" vehicleID="OW_2" />
+			<vehicle type="taxii" vehicleID="OW_1" />
+			<vehicle type="taxii" vehicleID="OW_2" />
 		</oneway>
-		<freefloating id="FF_1" x="-375" y="0" type="car" />
-		<freefloating id="FF_2" x="0" y="-375" type="car" />
-		<freefloating id="FF_3" x="-375" y="0" type="car" />
-		<freefloating id="FF_4" x="0" y=".75" type="car" />
+		<!--car to scooter -->
+		<freefloating id="FF_1" x="-375" y="0" type="scooter" />
+		<freefloating id="FF_2" x="0" y="-375" type="scooter" />
+		<freefloating id="FF_3" x="-375" y="0" type="scooter" />
+		<freefloating id="FF_4" x="0" y=".75" type="scooter" />
 	</company>
 </companies>

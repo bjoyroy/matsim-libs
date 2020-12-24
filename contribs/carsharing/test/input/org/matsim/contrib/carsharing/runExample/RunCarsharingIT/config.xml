@@ -41,6 +41,8 @@
 		<param name="statsWriterFrequency" value="1" />
 			<param name="vehiclelocations" value="CarsharingStations.xml" />
 			<param name="membership" value="CSMembership.xml" />
+			<!-- vehicleTypeFile added by joyroy -->
+			<param name="vechileTypeFile" value="vehicle_types.xml"/>
 	</module>
 
 

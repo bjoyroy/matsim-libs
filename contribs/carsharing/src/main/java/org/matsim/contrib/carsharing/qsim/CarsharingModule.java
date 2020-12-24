@@ -1,5 +1,6 @@
 package org.matsim.contrib.carsharing.qsim;
 
+import org.matsim.contrib.carsharing.helper.VehicleTypeContainer;
 import org.matsim.contrib.carsharing.manager.supply.CarsharingSupplyInterface;
 import org.matsim.core.mobsim.qsim.QSim;
 
@@ -11,8 +12,8 @@ public class CarsharingModule extends AbstractModule {
 
 	@Provides
 	@Singleton
-	public ParkCSVehicles provideAgentSource(QSim qsim, CarsharingSupplyInterface carsharingSupply) {
-		return new ParkCSVehicles(qsim, carsharingSupply);
+	public ParkCSVehicles provideAgentSource(QSim qsim, CarsharingSupplyInterface carsharingSupply, VehicleTypeContainer vehicleTypeContainer) {
+		return new ParkCSVehicles(qsim, carsharingSupply, vehicleTypeContainer);
 	}
 
 	@Override
