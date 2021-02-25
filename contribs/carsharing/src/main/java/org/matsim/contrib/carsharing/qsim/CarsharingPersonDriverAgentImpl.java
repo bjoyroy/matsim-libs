@@ -64,9 +64,10 @@ public class CarsharingPersonDriverAgentImpl implements MobsimDriverAgent, Mobsi
 	@Override
 	public final void endActivityAndComputeNextState(final double now) {
 
-		PlanElement pe = this.getNextPlanElement();
+		// problem in here.
+		PlanElement pe = this.getNextPlanElement(); // twoway
 		int nextElementIndex = this.getCurrentPlan().getPlanElements().indexOf(pe);
-		Leg legToBerouted = (Leg)pe;
+		Leg legToBerouted = (Leg)pe; //
 		if (carsharingLeg(pe)) {
 			int countCSLegs = 0;
 			List<PlanElement> newTrip = null;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE companies SYSTEM "src/main/resources/dtd/CarsharingStations.dtd">
+<companies>
+	<company name="Mobility">
+		<!-- <twoway id="1" x="-375" y="0" >
+			<vehicle type="car" vehicleID="TW_1" />
+			<vehicle type="car" vehicleID="TW_2" />
+		</twoway>
+		<twoway id="2" x="0" y="375" >
+			<vehicle type="car" vehicleID="TW_3" />
+			<vehicle type="car" vehicleID="TW_4" />
+		</twoway>
+		<oneway id="1" x="-375" y="0" freeparking="2">
+			<vehicle type="car" vehicleID="OW_1" />
+			<vehicle type="car" vehicleID="OW_2" />
+		</oneway> -->
+		<freefloating id="FF_1" x="517551.6063968218" y="3708592.4471587255" type="bike" />
+		<freefloating id="FF_2" x="518252.20644321037" y="3707364.645248397" type="bike" />
+		<freefloating id="FF_3" x="517718.86304063734" y="3706161.1469509085" type="bike" />
+		<freefloating id="FF_4" x="517028.7362501344" y="3708027.4031867827" type="bike" />
+	</company>
+</companies>

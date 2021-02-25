@@ -129,6 +129,8 @@ public class CarsharingManagerNew implements CarsharingManagerInterface, Iterati
 			// this.carsharingSupplyContainer.getCompanyAgents().
 			// get(((CarsharingRoute)legToBeRouted.getRoute()).getCompany());
 			List<CSVehicle> offeredVehicles = new ArrayList<>();
+			
+			// something wrong in here.
 			for (CompanyAgent companyAgent : this.carsharingSupplyContainer.getCompanyAgents().values()) {
 
 				CSVehicle offeredVehicle = companyAgent.vehicleRequest(person.getId(), startLink, destinationLink,

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE areas SYSTEM "src/main/resources/dtd/freefloating_areas_v1.dtd">
+
+<areas>
+    <company name="Mobility">
+        <area id="100">
+            <node x="513900.6067651198" y="3709654.0761458054"/> <!--Top right corner-->
+            <node x="522152.0970378619" y="3712070.9540515803"/> <!--Top left corner-->
+            <node x="522597.2381654222" y="3707100.1349743214" /> <!--Bottom right corner-->
+            <node x="514002.69548942265" y="3705753.36702152"/> <!--Bottom left corner-->
+        </area>
+    </company>
+</areas>

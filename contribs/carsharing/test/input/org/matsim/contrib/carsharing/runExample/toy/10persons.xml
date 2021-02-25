@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE population SYSTEM "http://www.matsim.org/files/dtd/population_v5.dtd">
+
+<population>
+
+<!-- ====================================================================== -->
+
+	<person id="0" employed="yes" >
+		<plan selected="yes">
+			<act type="h" facility="0" x="0.0" y="-375.0" start_time="00:00:00" max_dur="08:00:00" end_time="08:00:00" />
+			<leg mode="car">
+			</leg>
+			<act type="w" facility="3" x="1000.0" y="-250.0" start_time="08:00:00" max_dur="08:00:00" />
+            <leg mode="car">
+			</leg>
+			<act type="h" facility="0" x="0.0" y="-375.0" start_time="08:00:00" max_dur="08:00:00" />
+			<leg mode="car">
+			</leg>
+			<act type="w" facility="3" x="1000.0" y="-250.0" start_time="08:00:00" max_dur="08:00:00" />
+            <leg mode="car">
+			</leg>
+			<act type="h" facility="0" x="0.0" y="-375.0" start_time="08:00:00" />
+		</plan>
+
+	</person>
+
+<!-- ====================================================================== -->
+
+	<person id="1" employed="yes" >
+		<plan selected="yes">
+			<act type="h" facility="1" x="-375.0" y="0.0" start_time="00:00:03" max_dur="08:00:00" end_time="08:00:03" />
+			<leg mode="freefloating">
+			</leg>
+			<act type="w" facility="4" x="1250.0" y="0.0" start_time="08:00:03" max_dur="08:00:00" />
+            <leg mode="freefloating">
+			</leg>
+            <act type="h" facility="1" x="-375.0" y="0.0" start_time="08:00:03" max_dur="08:00:00" end_time="16:00:03" />
+
+		</plan>
+
+	</person>
+</population>

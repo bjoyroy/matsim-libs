@@ -36,6 +36,9 @@ public class CarsharingSubTourPermissableModesCalculator implements PermissibleM
 		}
 	}
 	
+	// todo 
+	// Where it is used. Why freefloating was not added.
+	// github ask question why it is commented out... 
 	@Override
 	public Collection<String> getPermissibleModes(Plan plan) {
 		final Person person;
@@ -49,6 +52,18 @@ public class CarsharingSubTourPermissableModesCalculator implements PermissibleM
 			throw new IllegalArgumentException( "I need a PersonImpl to get car availability" );
 		}
 		
+		// addition
+		if (Boolean.parseBoolean(scenario.getConfig().getModule("FreeFloating").getParams().get("useFreeFloating"))
+					
+				 && this.memberships.getPerPersonMemberships().get(personId).getMembershipsPerCSType().containsKey("freefloating")) {
+			 
+			 
+			 l.add("freefloating");
+			 
+		 }
+		 
+		
+		// previously there
 		 if (Boolean.parseBoolean(scenario.getConfig().getModule("TwoWayCarsharing").getParams().get("useTwoWayCarsharing"))
 		
 				 && this.memberships.getPerPersonMemberships().get(personId).getMembershipsPerCSType().containsKey("twoway")) {
@@ -57,6 +72,8 @@ public class CarsharingSubTourPermissableModesCalculator implements PermissibleM
 			 l.add("twoway");
 			 
 		 }
+		 
+		 
 		
 		return l;
 	}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE population SYSTEM "http://www.matsim.org/files/dtd/population_v5.dtd">
+
+<population>
+
+<!-- ====================================================================== -->
+
+	<person id="0" employed="yes" >
+		<plan selected="yes">
+			<act type="h" facility="0" x="517099.8974021786" y="3708199.2887054575" start_time="00:00:00" end_time="08:00:00" />
+			<leg mode="freefloating">
+			</leg>
+			<act type="w" facility="3" x="518372.6166282047" y="3708660.27780457" start_time="08:15:00" end_time="17:00:00" />
+            <leg mode="freefloating">
+			</leg>
+			<act type="h" facility="0" x="517099.8974021786" y="3708199.2887054575" start_time="17:30:00" end_time="24:00:00" />
+		</plan>
+
+	</person>
+
+<!-- ====================================================================== -->
+
+	<person id="1" employed="yes" >
+		<plan selected="yes">
+			<act type="h" facility="0" x="517099.8974021786" y="3708199.2887054575" start_time="00:00:00" end_time="08:00:00" />
+			<leg mode="car">
+			</leg>
+			<act type="w" facility="3" x="518372.6166282047" y="3708660.27780457" start_time="08:15:00" end_time="17:00:00" />
+            <leg mode="car">
+			</leg>
+			<act type="h" facility="0" x="517099.8974021786" y="3708199.2887054575" start_time="17:30:00" end_time="24:00:00" />
+		</plan>
+
+	</person>
+
+	<person id="3" employed="yes" >
+		<plan selected="yes">
+			<act type="h" facility="0" x="518372.6166282047" y="3708660.27780457" start_time="00:00:00" end_time="09:00:00" />
+			<leg mode="freefloating">
+			</leg>
+			<act type="w" facility="3" x="517099.8974021786" y="3708199.2887054575" start_time="09:15:00" end_time="17:00:00" />
+            <leg mode="freefloating">
+			</leg>
+			<act type="h" facility="0" x="518372.6166282047" y="3708660.27780457" start_time="17:30:00" end_time="24:00:00" />
+		</plan>
+
+	</person>
+
+</population>

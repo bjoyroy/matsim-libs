@@ -11,7 +11,7 @@
 
 	<module name="controler" >
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="20" />
+		<param name="lastIteration" value="100" />
 		<param name="outputDirectory" value="&OUTBASE;" />
 				<param name="eventsFileFormat" value="xml" />
 		<param name="writePlansInterval" value="1" />

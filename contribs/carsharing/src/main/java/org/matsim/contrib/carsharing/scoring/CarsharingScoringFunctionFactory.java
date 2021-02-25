@@ -1,5 +1,6 @@
 package org.matsim.contrib.carsharing.scoring;
 
+import org.jfree.util.Log;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.population.Person;
 import org.matsim.contrib.carsharing.manager.demand.DemandHandler;
@@ -59,6 +60,8 @@ public class CarsharingScoringFunctionFactory implements ScoringFunctionFactory 
 				new CharyparNagelAgentStuckScoring(
 						params.getScoringParameters(
 								person ) ) );
+		
+		Log.error("Scoring: " + scoringFunctionSum.getScore());
 	    return scoringFunctionSum;
 	  }
 }
