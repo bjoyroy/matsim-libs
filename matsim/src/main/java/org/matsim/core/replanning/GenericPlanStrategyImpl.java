@@ -73,7 +73,7 @@ public class GenericPlanStrategyImpl<T extends BasicPlan, I> implements GenericP
 		
 		// otherwise, find one according to selector (often defined in PlanStrategy ctor):
 		if (plan == null) {
-			plan = this.planSelector.selectPlan(person);
+			plan = this.planSelector.selectPlan(person); // one random plan
 		}
 		
 		// "select" that plan:
@@ -84,18 +84,21 @@ public class GenericPlanStrategyImpl<T extends BasicPlan, I> implements GenericP
 			log.error( planSelector+" returned no plan: not changing selected plan for person "+person );
 		}
 
+
 		// if there is a "module" (i.e. "innovation"):
-		if (this.firstModule != null) {
+		if (this.firstModule != null) { // SubtourModeChoice
 			
 			// set the working plan to a copy of the selected plan:
 			plan = person.createCopyOfSelectedPlanAndMakeSelected();
 			
 			// add new plan to container that contains the plans that are handled by this PlanStrategy:
-			this.plans.add(plan);
+			this.plans.add(plan); // reverse this
 
 			// start working on this new plan:
 			this.firstModule.handlePlan(plan);
 		}
+		
+		
 
 	}
 

@@ -11,7 +11,7 @@
 
 	<module name="controler" >
 		<param name="firstIteration" value="0" />
-		<param name="lastIteration" value="100" />
+		<param name="lastIteration" value="20" />
 		<param name="outputDirectory" value="&OUTBASE;" />
 				<param name="eventsFileFormat" value="xml" />
 		<param name="writePlansInterval" value="1" />
@@ -114,12 +114,12 @@
 <!-- ====================================================================== -->
 
 <module name="strategy">
-
 	<param name="ModuleProbability_1" value="0.0" />
 	<param name="Module_1" value="SelectExpBeta" />
 
 	<param name="maxAgentPlanMemorySize" value="5" />
 
+	<!-- ModuleProbability_2 from 0.5 to 1 -->
 	<param name="ModuleProbability_2" value="0.5" />
 	<param name="Module_2" value="RandomTripToCarsharingStrategy" />
 	<param name="ModuleDisableAfterIteration_2" value="1000" />
@@ -131,7 +131,6 @@
 	<param name="ModuleProbability_4" value="1.0" />
 	<param name="Module_4" value="SubtourModeChoice" />
 	<param name="ModuleDisableAfterIteration_4" value="1000" />
-
 </module>
 
 

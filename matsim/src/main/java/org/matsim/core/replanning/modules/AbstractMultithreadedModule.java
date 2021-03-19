@@ -121,6 +121,7 @@ abstract public class AbstractMultithreadedModule implements PlanStrategyModule 
 			this.algothreads[this.count % this.numOfThreads].addPlanToThread(plan);
 			this.count++;
 		} else {
+			// which algo we are running?
 			this.directAlgo.run(plan);
 		}
 	}

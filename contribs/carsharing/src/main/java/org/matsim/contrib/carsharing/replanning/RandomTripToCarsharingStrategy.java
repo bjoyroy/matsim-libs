@@ -11,6 +11,8 @@ import org.matsim.core.replanning.PlanStrategy;
 import org.matsim.core.replanning.PlanStrategyImpl;
 import org.matsim.core.replanning.ReplanningContext;
 import org.matsim.core.replanning.modules.ReRoute;
+import org.matsim.core.replanning.selectors.BestPlanSelector;
+import org.matsim.core.replanning.selectors.ExpBetaPlanSelector;
 import org.matsim.core.replanning.selectors.RandomPlanSelector;
 import org.matsim.core.router.TripRouter;
 
@@ -23,6 +25,8 @@ public class RandomTripToCarsharingStrategy implements PlanStrategy{
 	@Inject
 	public RandomTripToCarsharingStrategy(final Scenario scenario, Provider<TripRouter> tripRouterProvider, MembershipContainer memberships) {
 		this.strategy = new PlanStrategyImpl( new RandomPlanSelector<Plan, Person>() );
+		//this.strategy = new PlanStrategyImpl( new BestPlanSelector<Plan, Person>() );
+		//this.strategy = new PlanStrategyImpl(new ExpBetaPlanSelector<Plan, Person>(1.0));
 		 	
 		//addStrategyModule( new TripsToLegsModule(controler.getConfig() ) );   //lets try without this, not sure if it is needed
 		CarsharingTripModeChoice smc = new CarsharingTripModeChoice(tripRouterProvider, scenario, memberships);

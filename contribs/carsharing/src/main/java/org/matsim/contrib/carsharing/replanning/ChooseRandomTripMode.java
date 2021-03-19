@@ -28,6 +28,7 @@ public final class ChooseRandomTripMode implements PlanAlgorithm {
 	private final Scenario scenario;
 	private MembershipContainer memberships;
 	
+	// maybe Key class
 	public ChooseRandomTripMode(final Scenario scenario, final String[] possibleModes,
 								final Random rng, MembershipContainer memberships) {
 		this.possibleModes = possibleModes.clone();

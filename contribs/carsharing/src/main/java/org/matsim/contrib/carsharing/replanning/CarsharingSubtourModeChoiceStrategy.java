@@ -11,6 +11,8 @@ import org.matsim.core.replanning.PlanStrategyImpl;
 import org.matsim.core.replanning.ReplanningContext;
 import org.matsim.core.replanning.modules.ReRoute;
 import org.matsim.core.replanning.modules.SubtourModeChoice;
+import org.matsim.core.replanning.selectors.BestPlanSelector;
+import org.matsim.core.replanning.selectors.ExpBetaPlanSelector;
 import org.matsim.core.replanning.selectors.RandomPlanSelector;
 
 import com.google.inject.Inject;
@@ -28,6 +30,8 @@ public class CarsharingSubtourModeChoiceStrategy implements PlanStrategy {
 	@Inject
 	public CarsharingSubtourModeChoiceStrategy(final Scenario scenario, Provider<TripRouter> tripRouterProvider, MembershipContainer memberships) {
 		this.strategy = new PlanStrategyImpl( new RandomPlanSelector<Plan, Person>() );
+		//this.strategy = new PlanStrategyImpl(new BestPlanSelector<Plan, Person>());
+		//this.strategy = new PlanStrategyImpl(new ExpBetaPlanSelector<Plan, Person>(1.0));
 
 		//addStrategyModule( new TripsToLegsModule(controler.getConfig() ) );   
 		SubtourModeChoice smc = new SubtourModeChoice(tripRouterProvider, scenario.getConfig().global(), scenario.getConfig().subtourModeChoice());
